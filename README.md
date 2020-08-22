@@ -12,12 +12,12 @@ Once running inside container:
 
 `./init.sh`
 
-Follow prompts... "Y" to all
+Follow prompts... "Y" to all. Once complete, edit `config/dev.exs` to use `db` instead of `localhost` as hostname for postgres
+
+`mix ecto.create`
 
 `exit`
 
-Edit config file to use `db` instead of `localhost` as host for postgres
-
-`docker-compose run mix ecto.create`
+Project is ready to go!
 
 `docker-compose up`
