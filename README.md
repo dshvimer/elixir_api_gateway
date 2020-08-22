@@ -1,17 +1,23 @@
-`~/dev $ git clone https://github.com/dshvimer/elixir-docker-starter.git`
+Bootstrapping
 
-`~/dev $ cd elixir-docker-starter`
+`git clone https://github.com/dshvimer/elixir-docker-starter.git`
 
-`~/dev/elixir-docker-starter $ docker-compose build`
+`cd elixir-docker-starter`
 
-`~/dev/elixir-docker-starter $ docker-compose run app sh`
+`docker-compose build`
 
-`/app_umbrella #  ./init.sh`
+`docker-compose run app sh`
 
-`/app_umbrella #  exit`
+Once running inside container:
 
-Edit config to point to host `db` for postgres
+`./init.sh`
 
-`~/dev/elixir-docker-starter $ docker-compose run mix ecto.create`
+Follow prompts...
 
-`~/dev/elixir-docker-starter $ docker-compose up`
+`exit`
+
+Edit config file to use `db` instead of `localhost` as host for postgres
+
+`docker-compose run mix ecto.create`
+
+`docker-compose up`
