@@ -12,7 +12,7 @@ Once running inside container:
 
 `./init.sh`
 
-Follow prompts...
+Follow prompts... "Y" to all
 
 `exit`
 
