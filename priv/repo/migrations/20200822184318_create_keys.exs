@@ -4,6 +4,7 @@ defmodule Gateway.Repo.Migrations.CreateKeys do
   def change do
     create table(:keys) do
       add :value, :text, unique: true, null: false
+      timestamps()
     end
 
     create unique_index(:keys, [:value])
