@@ -1,4 +1,4 @@
-Bootstrapping
+## Bootstrapping
 
 `git clone https://github.com/dshvimer/elixir-docker-starter.git`
 
@@ -24,4 +24,16 @@ Follow prompts... "Y" to all. Once complete, edit `config/dev.exs` to use `db` i
 
 Project is ready to go!
 
-`docker-compose up`
+## Development
+
+`docker-compose up` will start the development server
+
+`docker-compose run mix ecto.migrate` to migrate
+
+`docker-compose run mix test` to run tests
+
+Sometimes `docker-compose run` can be slow. I like to run `docker-compose run sh`, and keep an open session inside the container. Then run commands as usual: 
+
+`mix ecto.migrate`
+
+`mix test`
