@@ -1,5 +1,5 @@
-APP_NAME=test
-MODULE_NAME=Test
+APP_NAME=gateway
+MODULE_NAME=Gateway
 
 mix phx.new . \
     --app ${APP_NAME} \

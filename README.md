@@ -1,39 +1,20 @@
-## Bootstrapping
+# Gateway
 
-`git clone https://github.com/dshvimer/elixir-docker-starter.git`
+To start your Phoenix server:
 
-Edit `init.sh`, set app and module names
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.setup`
+  * Install Node.js dependencies with `npm install` inside the `assets` directory
+  * Start Phoenix endpoint with `mix phx.server`
 
-`cd elixir-docker-starter`
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-`rm -rf .git`
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-`docker-compose build`
+## Learn more
 
-`docker-compose run app sh`
-
-Once running inside container:
-
-`./init.sh`
-
-Follow prompts... "Y" to all. Once complete, edit `config/dev.exs` to use `db` instead of `localhost` as hostname for postgres
-
-`mix ecto.create`
-
-`exit`
-
-Project is ready to go!
-
-## Development
-
-`docker-compose up` will start the development server
-
-`docker-compose run mix ecto.migrate` to migrate
-
-`docker-compose run mix test` to run tests
-
-Sometimes `docker-compose run` can be slow. I like to run `docker-compose run sh`, and keep an open session inside the container. Then run commands as usual: 
-
-`mix ecto.migrate`
-
-`mix test`
+  * Official website: https://www.phoenixframework.org/
+  * Guides: https://hexdocs.pm/phoenix/overview.html
+  * Docs: https://hexdocs.pm/phoenix
+  * Forum: https://elixirforum.com/c/phoenix-forum
+  * Source: https://github.com/phoenixframework/phoenix
