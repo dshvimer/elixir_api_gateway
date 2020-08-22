@@ -1,7 +1,7 @@
 FROM elixir:1.10.4-alpine
 
-WORKDIR /app_umbrella
-ADD . /app_umbrella
+WORKDIR /app
+ADD . /app
 
 # For live reload
 RUN apk add --update inotify-tools nodejs npm
