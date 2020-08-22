@@ -4,6 +4,8 @@ Bootstrapping
 
 `cd elixir-docker-starter`
 
+`rm -rf .git`
+
 `docker-compose build`
 
 `docker-compose run app sh`
