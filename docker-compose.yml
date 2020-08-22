@@ -9,7 +9,7 @@ services:
     build: .
     command: mix phx.server
     volumes:
-      - .:/app_umbrella
+      - .:/app
     ports:
       - "4000:4000"
     depends_on:
