@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: postgres:9.6-alpine
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+  app:
+    build: .
+    command: mix phx.server
+    volumes:
+      - .:/app_umbrella
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
