@@ -2,6 +2,8 @@ Bootstrapping
 
 `git clone https://github.com/dshvimer/elixir-docker-starter.git`
 
+Edit `init.sh`, set app and module names
+
 `cd elixir-docker-starter`
 
 `rm -rf .git`
