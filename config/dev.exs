@@ -30,6 +30,11 @@ config :gateway, GatewayWeb.Endpoint,
     ]
   ]
 
+config :gateway, GatewayWeb.ProxyEndpoint,
+  http: [port: 4001],
+  debug_errors: true,
+  check_origin: false
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

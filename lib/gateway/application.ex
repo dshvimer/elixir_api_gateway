@@ -14,9 +14,12 @@ defmodule Gateway.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Gateway.PubSub},
       # Start the Endpoint (http/https)
-      GatewayWeb.Endpoint
+      GatewayWeb.Endpoint,
+      # Start the Proxy Endpoint (http/https)
+      GatewayWeb.ProxyEndpoint,
       # Start a worker by calling: Gateway.Worker.start_link(arg)
       # {Gateway.Worker, arg}
+      {Cachex, name: :key_cache}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

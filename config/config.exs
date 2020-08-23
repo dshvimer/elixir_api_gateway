@@ -19,6 +19,9 @@ config :gateway, GatewayWeb.Endpoint,
   pubsub_server: Gateway.PubSub,
   live_view: [signing_salt: "F2d7GcBM"]
 
+# Configures the proxy endpoint
+config :gateway, GatewayWeb.ProxyEndpoint, url: [host: "localhost"]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
