@@ -1,4 +1,4 @@
-defmodule Gateway.RoutingTable do
+defmodule Gateway.Routing do
   def match(table, path) do
     parts = Path.split(path)
     do_match(table, parts)

@@ -1,6 +1,6 @@
-defmodule Gateway.RoutingTableTest do
+defmodule Gateway.RoutingTest do
   use Gateway.DataCase
-  alias Gateway.RoutingTable
+  alias Gateway.Routing
 
   describe "match" do
     test "simple mapping" do
@@ -11,9 +11,9 @@ defmodule Gateway.RoutingTableTest do
         }
       }
 
-      assert {:ok, "/u"} = RoutingTable.match(table, "/users")
-      assert {:ok, "/b"} = RoutingTable.match(table, "/books")
-      assert {:error, :no_match} = RoutingTable.match(table, "/something")
+      assert {:ok, "/u"} = Routing.match(table, "/users")
+      assert {:ok, "/b"} = Routing.match(table, "/books")
+      assert {:error, :no_match} = Routing.match(table, "/something")
     end
 
     test "nested mapping" do
@@ -26,9 +26,9 @@ defmodule Gateway.RoutingTableTest do
         }
       }
 
-      assert {:ok, "/u"} = RoutingTable.match(table, "/api/users")
-      assert {:ok, "/b"} = RoutingTable.match(table, "/api/books")
-      assert {:error, :no_match} = RoutingTable.match(table, "/something")
+      assert {:ok, "/u"} = Routing.match(table, "/api/users")
+      assert {:ok, "/b"} = Routing.match(table, "/api/books")
+      assert {:error, :no_match} = Routing.match(table, "/something")
     end
 
     test "leftover parts get appended" do
@@ -41,9 +41,9 @@ defmodule Gateway.RoutingTableTest do
         }
       }
 
-      assert {:ok, "/u/1"} = RoutingTable.match(table, "/api/users/1")
-      assert {:ok, "/b/1/operation"} = RoutingTable.match(table, "/api/books/1/operation")
-      assert {:error, :no_match} = RoutingTable.match(table, "/something/1")
+      assert {:ok, "/u/1"} = Routing.match(table, "/api/users/1")
+      assert {:ok, "/b/1/operation"} = Routing.match(table, "/api/books/1/operation")
+      assert {:error, :no_match} = Routing.match(table, "/something/1")
     end
   end
 
@@ -59,7 +59,7 @@ defmodule Gateway.RoutingTableTest do
                  "users" => "/u",
                  "books" => "/b"
                }
-             } == RoutingTable.build_table(endpoints)
+             } == Routing.build_table(endpoints)
     end
 
     test "nested" do
@@ -75,7 +75,7 @@ defmodule Gateway.RoutingTableTest do
                    "books" => "/b"
                  }
                }
-             } == RoutingTable.build_table(endpoints)
+             } == Routing.build_table(endpoints)
     end
   end
 end

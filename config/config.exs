@@ -23,7 +23,7 @@ config :gateway, GatewayWeb.Endpoint,
 config :gateway, GatewayWeb.ProxyEndpoint, url: [host: "localhost"]
 
 # Configure RoutingTable
-config :gateway, Gateway.RoutingTable, table: %{"/" => "/"}
+config :gateway, Gateway.Routing, table: %{"/" => "/"}
 
 # Configures Elixir's Logger
 config :logger, :console,
