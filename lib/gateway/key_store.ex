@@ -51,7 +51,7 @@ defmodule Gateway.KeyStore do
 
   A return value of `{:error, :not_found}` means the key was not found.
   """
-  @spec cache_get(binary) :: {:ok, Key.t() | {:ok, :skip} | {:error, any}
+  @spec cache_get(binary) :: {:ok, Key.t()} | {:ok, :skip} | {:error, any}
   def cache_get(key) do
     case Cachex.get(:key_cache, key) do
       {:ok, :not_found} -> {:ok, :skip}
