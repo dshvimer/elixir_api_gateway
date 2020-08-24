@@ -9,6 +9,6 @@ defmodule Gateway.Repo.Migrations.CreateEndpoints do
       timestamps()
     end
 
-    # create unique_index(:keys, [:value])
+    create unique_index(:endpoints, [:path])
   end
 end

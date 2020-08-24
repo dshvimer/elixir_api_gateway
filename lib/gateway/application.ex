@@ -19,6 +19,7 @@ defmodule Gateway.Application do
       GatewayWeb.ProxyEndpoint,
       # Start a worker by calling: Gateway.Worker.start_link(arg)
       # {Gateway.Worker, arg}
+      # Create ETS table for API Keys
       {Cachex, name: :key_cache}
     ]
 

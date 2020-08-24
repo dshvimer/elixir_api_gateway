@@ -19,4 +19,7 @@ defmodule Gateway.RoutingTable do
       put_in(acc, Enum.map(Path.split(path), &Access.key(&1, %{})), upstream)
     end)
   end
+
+  def get_table(), do: Application.get_env(:gateway, __MODULE__) |> Keyword.get(:table)
+  def put_table(table), do: Application.put_env(:gateway, __MODULE__, table: table)
 end
