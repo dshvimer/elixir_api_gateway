@@ -3,6 +3,11 @@ defmodule Gateway.RoutingTest do
   alias Gateway.Routing
 
   describe "match" do
+    test "github" do
+      table = %{"/" => "https://api.github.com/"}
+      assert {:ok, "https://api.github.com/zen"} = Routing.match(table, "/zen")
+    end
+
     # TODO Add more realistic examples
     test "simple mapping" do
       table = %{

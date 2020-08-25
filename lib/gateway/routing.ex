@@ -3,6 +3,7 @@ defmodule Gateway.Routing do
   alias Gateway.{Endpoint, Repo}
 
   def match(table, path) do
+    # Maybe URI.parse is better?
     parts = Path.split(path)
     do_match(table, parts)
   end

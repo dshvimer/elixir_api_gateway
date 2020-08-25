@@ -11,7 +11,7 @@ defmodule GatewayWeb.RateLimiter do
   end
 
   defp check_rate(%Plug.Conn{assigns: %{api_key: key}}) do
-    ExRated.check_rate(key, 60_000, 5)
+    ExRated.check_rate(key, 10_000, 5)
   end
 
   defp render_error(conn) do

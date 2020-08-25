@@ -6,5 +6,5 @@ defmodule GatewayWeb.ProxyEndpoint do
   plug GatewayWeb.ApiKey
   plug GatewayWeb.RateLimiter
   plug GatewayWeb.DynamicRouter
-  plug ReverseProxyPlug, upstream: "https://api.github.com/"
+  # plug ReverseProxyPlug, upstream: "https://api.github.com/"
 end
