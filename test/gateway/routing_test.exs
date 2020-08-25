@@ -28,6 +28,7 @@ defmodule Gateway.RoutingTest do
 
       assert {:ok, "/u"} = Routing.match(table, "/api/users")
       assert {:ok, "/b"} = Routing.match(table, "/api/books")
+      assert {:error, :no_match} = Routing.match(table, "/api")
       assert {:error, :no_match} = Routing.match(table, "/something")
     end
 

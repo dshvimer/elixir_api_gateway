@@ -1,8 +1,12 @@
 defmodule Gateway.Routing do
+  alias Gateway.{Endpoint, Repo}
+
   def match(table, path) do
     parts = Path.split(path)
     do_match(table, parts)
   end
+
+  defp do_match(_table, []), do: {:error, :no_match}
 
   defp do_match(table, [head | tail]) do
     result = Map.get(table, head)
@@ -12,6 +16,14 @@ defmodule Gateway.Routing do
       is_binary(result) -> {:ok, Path.join([result | tail])}
       true -> {:error, :no_match}
     end
+  end
+
+  def load!() do
+    Endpoint
+    |> Repo.all()
+    |> Enum.map(&{&1.path, &1.upstream})
+    |> build_table()
+    |> put_table()
   end
 
   def build_table(endpoints) when is_list(endpoints) do
