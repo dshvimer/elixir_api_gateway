@@ -54,12 +54,14 @@ defmodule Gateway.RoutingTest do
         {"/books", "/b"}
       ]
 
-      assert %{
-               "/" => %{
-                 "users" => "/u",
-                 "books" => "/b"
-               }
-             } == Routing.build_table(endpoints)
+      expected = %{
+        "/" => %{
+          "users" => "/u",
+          "books" => "/b"
+        }
+      }
+
+      assert Routing.build_table(endpoints) == expected
     end
 
     test "nested" do
@@ -68,14 +70,16 @@ defmodule Gateway.RoutingTest do
         {"/api/books", "/b"}
       ]
 
-      assert %{
-               "/" => %{
-                 "api" => %{
-                   "users" => "/u",
-                   "books" => "/b"
-                 }
-               }
-             } == Routing.build_table(endpoints)
+      expected = %{
+        "/" => %{
+          "api" => %{
+            "users" => "/u",
+            "books" => "/b"
+          }
+        }
+      }
+
+      assert Routing.build_table(endpoints) == expected
     end
   end
 end
