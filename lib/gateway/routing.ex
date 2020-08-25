@@ -1,4 +1,5 @@
 defmodule Gateway.Routing do
+  use GenServer
   alias Gateway.{Endpoint, Repo}
 
   def match(table, path) do
@@ -18,6 +19,14 @@ defmodule Gateway.Routing do
     end
   end
 
+  def build_table([]), do: %{"/" => "/"}
+
+  def build_table(endpoints) when is_list(endpoints) do
+    Enum.reduce(endpoints, %{}, fn {path, upstream}, acc ->
+      put_in(acc, Enum.map(Path.split(path), &Access.key(&1, %{})), upstream)
+    end)
+  end
+
   def load!() do
     Endpoint
     |> Repo.all()
@@ -26,12 +35,9 @@ defmodule Gateway.Routing do
     |> put_table()
   end
 
-  def build_table(endpoints) when is_list(endpoints) do
-    Enum.reduce(endpoints, %{}, fn {path, upstream}, acc ->
-      put_in(acc, Enum.map(Path.split(path), &Access.key(&1, %{})), upstream)
-    end)
-  end
+  defp put_table(table), do: Application.put_env(:gateway, __MODULE__, table: table)
 
   def get_table(), do: Application.get_env(:gateway, __MODULE__) |> Keyword.get(:table)
-  def put_table(table), do: Application.put_env(:gateway, __MODULE__, table: table)
+  def start_link(arg), do: GenServer.start_link(__MODULE__, arg)
+  def init(_), do: {load!(), nil}
 end

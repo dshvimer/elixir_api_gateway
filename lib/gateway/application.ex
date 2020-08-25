@@ -20,7 +20,9 @@ defmodule Gateway.Application do
       # Start a worker by calling: Gateway.Worker.start_link(arg)
       # {Gateway.Worker, arg}
       # Create ETS table for API Keys
-      {Cachex, name: :key_cache}
+      {Cachex, name: :key_cache},
+      # Init the Routing Table
+      Gateway.Routing
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
