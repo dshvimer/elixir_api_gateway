@@ -47,7 +47,6 @@ defmodule Gateway.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:shortuuid, "~> 2.1"},
       {:cachex, "~> 3.3"},
-      {:reverse_proxy_plug, "~> 1.3.1"},
       {:ex_rated, "~> 1.2"},
       {:httpoison, "~> 1.6"}
     ]
