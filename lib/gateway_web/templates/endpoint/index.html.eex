@@ -1,0 +1,28 @@
+<h1>Listing Endpoints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Endpoint</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for endpoint <- @endpoints do %>
+    <tr>
+      <td><%= endpoint.path %></td>
+      <td><%= endpoint.upstream %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.endpoint_path(@conn, :show, endpoint) %></span>
+        <span><%= link "Edit", to: Routes.endpoint_path(@conn, :edit, endpoint) %></span>
+        <span><%= link "Delete", to: Routes.endpoint_path(@conn, :delete, endpoint), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Endpoint", to: Routes.endpoint_path(@conn, :new) %></span>

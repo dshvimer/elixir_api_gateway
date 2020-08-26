@@ -1,0 +1,18 @@
+<h1>Show Endpoint</h1>
+
+<ul>
+
+  <li>
+    <strong>Path:</strong>
+    <%= @endpoint.path %>
+  </li>
+
+  <li>
+    <strong>Upstream:</strong>
+    <%= @endpoint.upstream %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.endpoint_path(@conn, :edit, @endpoint) %></span>
+<span><%= link "Back", to: Routes.endpoint_path(@conn, :index) %></span>
