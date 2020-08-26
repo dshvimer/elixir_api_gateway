@@ -1,20 +1,19 @@
-# Gateway
+## Todo
 
-To start your Phoenix server:
+1. Improve `Gateway.RoutingTest`
+2. Test `Gateway.Proxy`
+3. Test `GatewayWeb` plugs
+4. Integration tests
+5. Endpoint CRUD
+6. API Key CRUD
+7. Frontend
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+### Unknowns
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Should this run as two separate services? Or one with two open ports?
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+How complex should routing be?
 
-## Learn more
+How to set rate limit rules? config or database?
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Different types of rate limiting?
