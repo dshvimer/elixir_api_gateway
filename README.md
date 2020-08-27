@@ -16,7 +16,7 @@ Run `docker-compose mix do ecto.create, ecto.migrate` to bootstrap the database
 
 Visit `/keys` to create API Keys. Add the value to a header named `x-api-key` when making HTTP requests.
 
-Visit `/endpoints` to create `Gateway.Endpoint`s. A routing table will be built when the server starts. After creating endpoints, restart the server (WIP sorry)
+Visit `/endpoints` to create endpoint mappings. A routing table will be built when the server starts. After creating endpoints, restart the server (WIP sorry)
 
 Example endpoint: Path: `/api` -> Upstream: `https://api.github.com/` then make a get request to `localhost:4001/api/zen`
 
