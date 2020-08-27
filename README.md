@@ -12,6 +12,8 @@ Features:
 
 Run `docker-compose up` to start the server. Dashboard serves on port 4000. Gateway on port 4001
 
+Run 'docker-compose mix do ecto.create, ecto.migrate` to bootstrap the database
+
 Visit `/keys` to create API Keys. Add the value to a header named `x-api-key` when making HTTP requests.
 
 Visit `/endpoints` to create `Gateway.Endpoint`s. A routing table will be built when the server starts. After creating endpoints, restart the server (WIP sorry)
