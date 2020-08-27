@@ -1,3 +1,13 @@
+## About
+
+A side project to have fun with.
+
+Features:
+1. API Key authentication
+2. Rate limiting
+3. Mapping endpoints
+4. Low latency/high throughput
+
 ## Quickstart
 
 Run `docker-compose up` to start the server. Dashboard serves on port 4000. Gateway on port 4001
