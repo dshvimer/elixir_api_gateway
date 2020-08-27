@@ -1,0 +1,25 @@
+<h1>Listing Keys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for key <- @keys do %>
+    <tr>
+      <td><%= key.value %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.key_path(@conn, :show, key) %></span>
+        <span><%= link "Delete", to: Routes.key_path(@conn, :delete, key), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Key", to: Routes.key_path(@conn, :new) %></span>

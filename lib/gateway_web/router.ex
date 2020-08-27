@@ -18,6 +18,7 @@ defmodule GatewayWeb.Router do
 
     get "/", PageController, :index
     resources "/endpoints", EndpointController
+    resources "/keys", KeyController, except: [:create, :edit, :update]
   end
 
   # Other scopes may use custom stacks.

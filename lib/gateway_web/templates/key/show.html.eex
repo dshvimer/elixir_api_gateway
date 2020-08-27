@@ -1,0 +1,12 @@
+<h1>Show Key</h1>
+
+<ul>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @key.value %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: Routes.key_path(@conn, :index) %></span>
