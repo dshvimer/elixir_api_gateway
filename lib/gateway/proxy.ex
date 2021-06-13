@@ -8,7 +8,7 @@ defmodule Gateway.Proxy do
     {:ok, response.status_code, response.body, resp_headers}
   end
 
-  def response({:error, _reason}), do: {:error, "Error forwarding request."}
+  def response({:error, reason}), do: {:error, "Error forwarding request: #{inspect(reason)}"}
 
   def forward({method, url, body, headers}) do
     %HTTPoison.Request{

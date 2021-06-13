@@ -4,7 +4,7 @@ WORKDIR /app
 ADD . /app
 
 # For live reload
-RUN apk add --update inotify-tools nodejs npm
+RUN apk add --update inotify-tools nodejs npm make
 
 # Install hex & rebar
 RUN mix local.hex --force && \

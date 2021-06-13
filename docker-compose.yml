@@ -1,17 +1,17 @@
-version: "3"
+version: '3'
 services:
-  db:
-    image: postgres:9.6-alpine
-    environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-  app:
-    build: .
-    command: mix phx.server
-    volumes:
-      - .:/app
-    ports:
-      - "4000:4000"
-      - "4001:4001"
-    depends_on:
-      - db
+    db:
+        image: postgres:9.6-alpine
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+    app:
+        build: .
+        command: make start-dev
+        volumes:
+            - .:/app
+        ports:
+            - '4000:4000'
+            - '4001:4001'
+        depends_on:
+            - db
