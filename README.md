@@ -9,9 +9,9 @@ Features:
 
 ## Quickstart
 
-Run `docker-compose run mix deps.get` to setup the server.
+Run `docker-compose run app mix deps.get` to setup the server.
 
-Run `docker-compose run mix do ecto.create, ecto.migrate` to bootstrap the database
+Run `docker-compose run app mix do ecto.create, ecto.migrate` to bootstrap the database
 
 Run `docker-compose up` to start the server. Dashboard serves on port 4000. Gateway on port 4001
 
