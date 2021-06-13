@@ -9,7 +9,7 @@ Features:
 
 ## Quickstart
 
-Run `docker-compose run app mix deps.get` to setup the server.
+Run `docker-compose run app mix deps.get` to download deps.
 
 Run `docker-compose run app mix do ecto.create, ecto.migrate` to bootstrap the database
 
